@@ -2,10 +2,14 @@ import React from 'react'
 
 import style from './style.module.scss'
 
-export default function Button() {
+interface ButtonProps {
+  title: string
+}
+
+export default function Button({ title }: ButtonProps) {
   return (
     <button className={style.botao}>
-      botao
+      {title}
     </button>
   )
 }

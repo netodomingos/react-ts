@@ -1,4 +1,5 @@
 import React from 'react'
+import Item from './Item/Item'
 
 import style from './style.module.scss'
 
@@ -20,10 +21,10 @@ export default function List() {
         <ul>
 		{
 			tarefas.map((tarefa, index) => (
-				<li key={index} className={style.item}>
-					<h3>{tarefa.tarefa}</h3>
-					<span>{tarefa.tempo}</span>
-				</li>
+				<Item 
+					key={index}
+					{...tarefa}
+				/>
 			))
 		}
         </ul>
