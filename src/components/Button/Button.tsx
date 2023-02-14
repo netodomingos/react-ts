@@ -1,7 +1,11 @@
 import React from 'react'
 
+import './style.scss'
+
 export default function Button() {
   return (
-    <button>botao</button>
+    <button className='botao'>
+      botao
+    </button>
   )
 }
