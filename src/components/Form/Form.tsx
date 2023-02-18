@@ -5,18 +5,17 @@ import Button from '../Button/Button'
 
 import style from './style.module.scss'
 
+const DEFAULT_VALUE = { tarefa: '', tempo: '', isCompleted: false, isSelected: false }
+
 export default function Form() {
-  const [form, setForm ] = useState<IItem>({ tarefa: '', tempo: '', id: 1 })
+  const [form, setForm] = useState<IItem>(DEFAULT_VALUE)
   const { task, setTask } = useContext(TaskContext)
 
 	function handleAddTask(event: React.FormEvent<HTMLFormElement>){
 		event.preventDefault()
 
-    if(task.length === 0){
-      setTask([{ tarefa: form.tarefa, tempo: form.tempo, id: task.length }])
-    } else {
-      setTask([...task, { tarefa: form.tarefa, tempo: form.tempo, id: task.length }])
-    } 
+    setTask([...task, form])
+    setForm(DEFAULT_VALUE)
 	}
 
   return (

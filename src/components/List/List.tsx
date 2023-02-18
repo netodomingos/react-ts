@@ -13,9 +13,9 @@ export default function List() {
       <h2>Estudos do dia ({task.length})</h2>
       <ul>
 				{
-					task.map((tarefa) => (
+					task.map((tarefa, index) => (
 						<Item 
-							key={tarefa.id}
+							key={index}
 							{...tarefa}
 						/>
 					))
