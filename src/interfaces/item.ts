@@ -1,5 +1,6 @@
 export interface IItem {
   tarefa: string,
   tempo: string,
-  id: number
+  isSelected: boolean,
+  isCompleted: boolean
 }
