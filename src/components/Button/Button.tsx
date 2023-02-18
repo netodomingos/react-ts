@@ -8,7 +8,7 @@ interface ButtonProps {
 
 export default function Button({ title }: ButtonProps) {
   return (
-    <button className={style.botao}>
+    <button className={style.botao} type='submit'>
       {title}
     </button>
   )
