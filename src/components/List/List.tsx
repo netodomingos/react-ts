@@ -13,10 +13,10 @@ export default function List() {
       <h2>Estudos do dia ({task.length})</h2>
       <ul>
 				{
-					task.map((tarefa, index) => (
+					task.map((tasks) => (
 						<Item 
-							key={index}
-							{...tarefa}
+							key={tasks.id}
+							{...tasks}
 						/>
 					))
 				}

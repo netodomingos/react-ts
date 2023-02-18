@@ -5,7 +5,9 @@ import Button from '../Button/Button'
 
 import style from './style.module.scss'
 
-const DEFAULT_VALUE = { tarefa: '', tempo: '', isCompleted: false, isSelected: false }
+import { v4 as uuid4 } from 'uuid'
+
+const DEFAULT_VALUE = { tarefa: '', tempo: '', isCompleted: false, isSelected: false, id: '' }
 
 export default function Form() {
   const [form, setForm] = useState<IItem>(DEFAULT_VALUE)
@@ -14,7 +16,7 @@ export default function Form() {
 	function handleAddTask(event: React.FormEvent<HTMLFormElement>){
 		event.preventDefault()
 
-    setTask([...task, form])
+    setTask([...task, { ...form, id: uuid4() }])
     setForm(DEFAULT_VALUE)
 	}
 
