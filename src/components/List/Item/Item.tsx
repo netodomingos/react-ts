@@ -1,8 +1,8 @@
-import { Iitem } from '../../../interfaces/item'
+import { IItem } from '../../../interfaces/Item'
 
 import style from '../style.module.scss'
 
-export default function Item({ tarefa, tempo }: Iitem) {
+export default function Item({ tarefa, tempo }: IItem) {
   return (
     <li className={style.item}>
         <h3>{tarefa}</h3>

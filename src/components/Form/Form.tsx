@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { Iitem } from '../../interfaces/item'
+import { IItem } from '../../interfaces/Item'
 import Button from '../Button/Button'
 
 import style from './style.module.scss'
 
 export default function Form() {
-	const [task, setTask] = useState<Iitem>({ tarefa: '', tempo: '00:00' })
+	const [task, setTask] = useState<IItem>({ tarefa: '', tempo: '00:00' })
 
 	function handleAddTask(event: React.FormEvent<HTMLFormElement>){
 		event.preventDefault()

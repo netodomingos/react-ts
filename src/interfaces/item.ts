@@ -1,4 +1,4 @@
-export interface Iitem {
-    tarefa: string,
-    tempo: string,
+export interface IItem {
+  tarefa: string,
+  tempo: string,
 }
