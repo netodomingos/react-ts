@@ -1,28 +1,21 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+
+import TaskContext from '../../contexts/TaskContext'
 import Item from './Item/Item'
 
 import style from './style.module.scss'
 
 export default function List() {
-	const [tarefas, setTarefas] = useState([
-		{
-			tarefa: 'React',
-			tempo: '02:00:00'
-		},
-		{
-			tarefa: 'JavaScript',
-			tempo: '01:00:00'
-		}
-	])
+	const { task } = useContext(TaskContext)
 
   return (
     <aside className={style.listaTarefas}>
-      <h2>Estudos do dia</h2>
+      <h2>Estudos do dia ({task.length})</h2>
       <ul>
 				{
-					tarefas.map((tarefa, index) => (
+					task.map((tarefa) => (
 						<Item 
-							key={index}
+							key={tarefa.id}
 							{...tarefa}
 						/>
 					))

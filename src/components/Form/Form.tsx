@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import TaskContext from '../../contexts/TaskContext'
 import { IItem } from '../../interfaces/Item'
 import Button from '../Button/Button'
 
 import style from './style.module.scss'
 
 export default function Form() {
-	const [task, setTask] = useState<IItem>({ tarefa: '', tempo: '00:00' })
+  const [form, setForm ] = useState<IItem>({ tarefa: '', tempo: '', id: 1 })
+  const { task, setTask } = useContext(TaskContext)
 
 	function handleAddTask(event: React.FormEvent<HTMLFormElement>){
 		event.preventDefault()
-		
-		console.log(task);
-		// console.log(time);
+
+    if(task.length === 0){
+      setTask([{ tarefa: form.tarefa, tempo: form.tempo, id: task.length }])
+    } else {
+      setTask([...task, { tarefa: form.tarefa, tempo: form.tempo, id: task.length }])
+    } 
 	}
 
   return (
@@ -24,8 +29,8 @@ export default function Form() {
                 id='tarefa'
                 placeholder='O que voce quer estudar?'
                 required
-                value={task.tarefa}
-                onChange={text => setTask({ ...task, tarefa: text.currentTarget.value })}
+                value={form.tarefa}
+                onChange={text => setForm({ ...form, tarefa: text.currentTarget.value })}
 
             />
         </div>
@@ -39,12 +44,13 @@ export default function Form() {
                 min='00:00:00'
                 max='01:30:00'
                 required
-								value={task.tempo}
-                onChange={text => setTask({ ...task, tempo: text.currentTarget.value })}
+								value={form.tempo}
+                onChange={text => setForm({ ...form, tempo: text.currentTarget.value })}
             />
         </div>
         <Button
             title='Adicionar'
+            type='submit'
         />
     </form>
   )
