@@ -1,13 +1,8 @@
-import React from 'react'
+import { Iitem } from '../../../interfaces/item'
 
 import style from '../style.module.scss'
 
-interface ItemProps {
-    tarefa: string,
-    tempo: string,
-}
-
-export default function Item({ tarefa, tempo }: ItemProps) {
+export default function Item({ tarefa, tempo }: Iitem) {
   return (
     <li className={style.item}>
         <h3>{tarefa}</h3>
