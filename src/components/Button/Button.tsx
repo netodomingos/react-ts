@@ -1,14 +1,10 @@
-import React from 'react'
+import { IButton } from '../../interfaces/Button'
 
 import style from './style.module.scss'
 
-interface ButtonProps {
-  title: string
-}
-
-export default function Button({ title }: ButtonProps) {
+export default function Button({ title, type }: IButton) {
   return (
-    <button className={style.botao} type='submit'>
+    <button className={style.botao} type={type}>
       {title}
     </button>
   )
