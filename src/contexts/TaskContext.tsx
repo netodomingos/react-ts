@@ -29,14 +29,6 @@ export const TaskProvider = ({ children }: Children) => {
   const [tasks, setTasks] = useState<Array<IItem>>(DEFAULT_VALUE.tasks)
   const [selectedTask, setSelectedTask] = useState<IItem>(DEFAULT_VALUE.selectedTask)
 
-  useEffect(() => {
-   console.log(tasks);
-   console.log(selectedTask);
-   
-   
-  }, [tasks, selectedTask])
-  
-
   return (
     <TaskContext.Provider
       value={{ tasks, setTasks, selectedTask, setSelectedTask }}
