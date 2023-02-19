@@ -18,7 +18,7 @@ const DEFAULT_VALUE: TaskContextProps = {
     isCompleted: false, 
     isSelected: false, 
     tarefa: '', 
-    tempo: '' 
+    tempo: '00:00:00' 
   }, 
   setSelectedTask: () => {} 
 }
