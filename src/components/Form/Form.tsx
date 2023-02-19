@@ -11,12 +11,12 @@ const DEFAULT_VALUE = { tarefa: '', tempo: '', isCompleted: false, isSelected: f
 
 export default function Form() {
   const [form, setForm] = useState<IItem>(DEFAULT_VALUE)
-  const { task, setTask } = useContext(TaskContext)
+  const { tasks, setTasks } = useContext(TaskContext)
 
 	function handleAddTask(event: React.FormEvent<HTMLFormElement>){
 		event.preventDefault()
 
-    setTask([...task, { ...form, id: uuid4() }])
+    setTasks([...tasks, { ...form, id: uuid4() }])
     setForm(DEFAULT_VALUE)
 	}
 

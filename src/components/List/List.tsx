@@ -6,17 +6,17 @@ import Item from './Item/Item'
 import style from './style.module.scss'
 
 export default function List() {
-	const { task } = useContext(TaskContext)
+	const { tasks } = useContext(TaskContext)
 
   return (
     <aside className={style.listaTarefas}>
-      <h2>Estudos do dia ({task.length})</h2>
+      <h2>Estudos do dia ({tasks.length})</h2>
       <ul>
 				{
-					task.map((tasks) => (
+					tasks.map((task) => (
 						<Item 
-							key={tasks.id}
-							{...tasks}
+							key={task.id}
+							{...task}
 						/>
 					))
 				}
