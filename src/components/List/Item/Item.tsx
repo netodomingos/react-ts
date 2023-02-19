@@ -3,7 +3,7 @@ import TaskContext from '../../../contexts/TaskContext'
 import UseSelected from '../../../hooks/useSelectTask'
 import { IItem } from '../../../interfaces/Item'
 
-import style from '../style.module.scss'
+import style from './style.module.scss'
 
 export default function Item(task: IItem) {
   const { setSelectedTask, setTasks, tasks } = useContext(TaskContext)
