@@ -15,9 +15,13 @@ export default function Item(task: IItem) {
   }
   
   return (
-    <li className={`${style.item} ${task.isSelected && style.itemSelecionado}`} onClick={() => handleSelectTask()}>
-        <h3>{task.tarefa}</h3>
-        <span>{task.tempo}</span>
+    <li 
+      className={`${style.item} ${task.isSelected && style.itemSelecionado} ${task.isCompleted && style.itemCompletado}`}  
+      onClick={() => !task.isCompleted && handleSelectTask()}
+    >
+      <h3>{task.tarefa}</h3>
+      <span>{task.tempo}</span>
+      {task.isCompleted && <span className={style.concluido} aria-label="tarefa completada"></span>} 
     </li>
   )
 }

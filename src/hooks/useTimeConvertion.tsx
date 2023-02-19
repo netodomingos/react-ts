@@ -1,4 +1,4 @@
-function UseTimeConvertion( time: number){
+function UseTimeConvertion(time: number){
   const minutes = Math.floor(time / 60)
   const seconds = time % 60
 
